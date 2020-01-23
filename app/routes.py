@@ -1,11 +1,11 @@
 from app import app, oauth
-from flask import url_for, redirect
+from flask import url_for, redirect, render_template
 
 
 @app.route('/')
 @app.route('/index')
 def index():
-    return "Hello World"
+    return render_template('index.html')
 
 
 @app.route('/authorize')
@@ -16,5 +16,4 @@ def authorize():
 
 @app.route('/authorize/callback')
 def authorize_callback():
-    token = oauth.github.authorize_access_token()
-    return token
+    return oauth.github.authorize_access_token()
