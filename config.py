@@ -4,6 +4,9 @@ import os
 class Config:
     SECRET_KEY = os.urandom(24)
 
+    GITHUB_USERNAME = os.environ.get('GITHUB_USERNAME')
+    GITHUB_REPONAME = os.environ.get('GITHUB_REPONAME')
+
     GITHUB_CLIENT_ID = os.environ.get('GITHUB_CLIENT_ID')
     GITHUB_CLIENT_SECRET = os.environ.get('GITHUB_CLIENT_SECRET')
     GITHUB_API_BASE_URL = os.environ.get('GITHUB_API_BASE_URL')
